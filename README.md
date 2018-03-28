@@ -1,6 +1,4 @@
-#UIMaker
-
-扩展KMUIViewMaker 添加addMasorny
+UIMaker,扩展KMUIViewMaker 添加addMasorny
 
     [UIView km_makeView:^(KMUIViewMaker *make) {
         make
@@ -15,13 +13,14 @@
 
     }];
 
-[UIButton km_makeButton:^(KMButtonMaker *make) {
-    make.addTargetAndActionForControlEvents(self, @selector(test), UIControlEventTouchUpInside)
-        .frame(CGRectMake(100, 84, 150, 130))
-        .backgroundColor([UIColor blackColor])
-        .addToSuperView(self.view)
-        .addMasorny(^(MASConstraintMaker *maker) {
-            maker.center.equalTo(self.view);
-            maker.size.equalTo(@88);
-        });
-}];
+	[UIButton km_makeButton:^(KMButtonMaker *make) {
+		make.addTargetAndActionForControlEvents(self, @selector(test), UIControlEventTouchUpInside)
+			.frame(CGRectMake(100, 84, 150, 130))
+			.backgroundColor([UIColor blackColor])
+			.addToSuperView(self.view)
+			.addMasorny(^(MASConstraintMaker *maker) {
+				maker.center.equalTo(self.view);
+				maker.size.equalTo(@88);
+			});
+	}];
+
