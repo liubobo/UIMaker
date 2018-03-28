@@ -214,5 +214,23 @@
         return self;
     };
 }
-
+- (KMUIViewMaker * (^)(void (^constraints)(MASConstraintMaker *)))remakeMasorny {
+    return ^KMUIViewMaker *(void (^constraints)(MASConstraintMaker *)) {
+        NSAssert(_view.superview != nil, @"add to super first");
+        if (_view.superview) {
+            [_view mas_remakeConstraints:constraints];
+        }
+        return self;
+    };
+}
+- (KMUIViewMaker * (^)(void (^constraints)(MASConstraintMaker *)))updateMasorny {
+    return ^KMUIViewMaker *(void (^constraints)(MASConstraintMaker *)) {
+        NSAssert(_view.superview != nil, @"add to super first");
+        if (_view.superview) {
+            [_view mas_updateConstraints:constraints];
+        }
+        return self;
+    };
+}
 @end
+
